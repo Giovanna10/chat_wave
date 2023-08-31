@@ -1,0 +1,708 @@
+{
+  "users": {
+    "abc12": {
+      "name": "Mario Rossi",
+      "email": "mario.rossi@example.com"
+    },
+    "def34": {
+      "name": "Laura Bianchi",
+      "email": "laura.bianchi@example.com"
+    },
+    "ghi56": {
+      "name": "Luigi Verdi",
+      "email": "luigi.verdi@example.com"
+    },
+    "jkl78": {
+      "name": "Anna Russo",
+      "email": "anna.russo@example.com"
+    },
+    "mno90": {
+      "name": "Giovanni Esposito",
+      "email": "giovanni.esposito@example.com"
+    },
+    "pqr12": {
+      "name": "Francesca Romano",
+      "email": "francesca.romano@example.com"
+    },
+    "stu34": {
+      "name": "Roberto Conti",
+      "email": "roberto.conti@example.com"
+    },
+    "vwx56": {
+      "name": "Elena Ferri",
+      "email": "elena.ferri@example.com"
+    },
+    "yzw78": {
+      "name": "Marco Russo",
+      "email": "marco.russo@example.com"
+    },
+    "123ab": {
+      "name": "Sara Monti",
+      "email": "sara.monti@example.com"
+    }
+  },
+  "chats": {
+    "abc12": {
+      "def34": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:15:00",
+          "message": "Tutto bene, grazie! E tu?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "ghi56": [
+        {
+          "timestamp": "2023-08-31T14:30:00",
+          "message": "Ciao Mario, hai visto l'ultima partita?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "mno90": [
+        {
+          "timestamp": "2023-08-31T14:30:00",
+          "message": "Ciao Mario, hai visto l'ultima partita?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "stu34": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "vwx56": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "123ab": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ]
+    },
+    "def34": {
+      "abc12": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Laura, come stai oggi?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "mno90": [
+        {
+          "timestamp": "2023-08-31T14:30:00",
+          "message": "Ciao Mario, hai visto l'ultima partita?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "stu34": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "vwx56": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "123ab": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ]
+    },
+    "ghi56": {
+      "abc12": [
+        {
+          "timestamp": "2023-08-31T14:30:00",
+          "message": "Ciao Luigi, che ne dici della partita?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "mno90": [
+        {
+          "timestamp": "2023-08-31T14:30:00",
+          "message": "Ciao Mario, hai visto l'ultima partita?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "stu34": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "vwx56": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ],
+      "123ab": [
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        },
+        {
+          "timestamp": "2023-08-31T12:00:00",
+          "message": "Ciao Mario, come stai?"
+        }
+      ]
+    }
+  }
+}
