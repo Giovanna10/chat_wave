@@ -1,11 +1,10 @@
 import "./App.css";
+import AppRoutes from "./AppRoutes/AppRoutes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Chat Wave</p>
-      </header>
+      <AppRoutes />
     </div>
   );
 }
