@@ -8,70 +8,42 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Dispatch, SetStateAction, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
-import { User } from "../types";
+import { useSignIn } from "../../firebase/hooks";
 
-type UserForm = { email: string };
+const userSchema = yup.object({
+  email: yup.string().required("Inserisci la mail"),
+  password: yup.string().required("Inserisci la password"),
+});
 
-interface LoginFormProps {
-  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
-  login: (email: string) => Promise<User>;
-  setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
-}
+type UserForm = yup.InferType<typeof userSchema>;
 
-const LoginForm: React.FunctionComponent<LoginFormProps> = ({
-  setIsAuthenticated,
-  login,
-  setUser,
-}) => {
-  const [mexNoMailFound, setMexNoMailFound] = useState("");
+const LoginForm = () => {
+  const [signIn, _userCredential, _loading, errorAuth] = useSignIn();
+
   const {
     handleSubmit,
     control,
-    setError,
     formState: { errors },
-  } = useForm<UserForm>({
-    resolver: yupResolver(
-      yup.object({
-        email: yup.string().required("Inserisci la mail"),
-      })
-    ),
+  } = useForm({
+    resolver: yupResolver(userSchema),
   });
 
-  const onSubmit = (data: UserForm) => {
-    login(data.email)
-      .then((user) => {
-        setUser(user);
-      })
-      .catch((err) => {
-        setMexNoMailFound(err.message);
-        setError("email", {
-          message: "Email non trovata",
-        });
-      });
+  const onSubmit = ({ email, password }: UserForm) => {
+    signIn(email, password);
   };
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-      {errors.email ? (
-        <Alert
-          sx={{
-            position: "absolute",
-            top: 20,
-            left: 0,
-          }}
-          severity="warning"
-          action={
-            <Button onClick={() => setIsAuthenticated(false)} size="small">
-              Crea
-            </Button>
-          }
-        >
-          <AlertTitle>Attenzione</AlertTitle>
-          {mexNoMailFound}
-        </Alert>
-      ) : null}
+      <Box marginBottom={3}>
+        {errorAuth?.message ? (
+          <Alert severity="error">
+            <AlertTitle>Attenzione</AlertTitle>
+            {errorAuth?.message}
+          </Alert>
+        ) : null}
+      </Box>
       <FormGroup sx={{ rowGap: 3 }}>
         <Controller
           name="email"
@@ -87,15 +59,26 @@ const LoginForm: React.FunctionComponent<LoginFormProps> = ({
             />
           )}
         />
-        <TextField color="primary" label="Password" type="password" />
+        <Controller
+          name="password"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              color="primary"
+              label="Password"
+              type="password"
+            />
+          )}
+        />
         <Button variant="contained" type="submit">
           Accedi
         </Button>
       </FormGroup>
       <Typography>Non hai un account?</Typography>
-      <Button variant="text" onClick={() => setIsAuthenticated(false)}>
-        Crea
-      </Button>
+      <Link to="/register">
+        <Button variant="text">Crea</Button>
+      </Link>
     </Box>
   );
 };

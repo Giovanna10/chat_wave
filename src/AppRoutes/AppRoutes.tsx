@@ -1,33 +1,27 @@
-import { Box } from "@mui/material";
+import { Route, Routes } from "react-router";
+import { useAuthState } from "../firebase/hooks";
 import LoginForm from "../shared/components/LoginForm";
-import { useAuth } from "../shared/hooks";
-import PrivateArea from "./PrivateArea";
-import { useState } from "react";
 import RegistrationForm from "../shared/components/RegistrationForm";
+import PrivateArea from "./PrivateArea";
 
 interface AppRoutesProps {}
 
 const AppRoutes: React.FunctionComponent<AppRoutesProps> = () => {
-  const { user, setUser, login } = useAuth();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, _isLoading] = useAuthState();
 
   return (
-    <Box>
+    <>
       {user ? (
-        <PrivateArea />
-      ) : isAuthenticated ? (
-        <LoginForm
-          setUser={setUser}
-          login={login}
-          setIsAuthenticated={setIsAuthenticated}
-        />
+        <Routes>
+          <Route path="/" element={<PrivateArea />} />
+        </Routes>
       ) : (
-        <RegistrationForm
-          setUser={setUser}
-          setIsAuthenticated={setIsAuthenticated}
-        />
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/register" element={<RegistrationForm />} />
+        </Routes>
       )}
-    </Box>
+    </>
   );
 };
 

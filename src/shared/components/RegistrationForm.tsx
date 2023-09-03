@@ -1,47 +1,52 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
-import { Dispatch, SetStateAction } from "react";
+import {
+  Alert,
+  AlertTitle,
+  Box,
+  Button,
+  FormGroup,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { useUsers } from "../api";
-import { User } from "../types";
-import { getRandomId } from "../utils/getRandomId";
+import { useRegister } from "../../firebase/hooks";
 
-type UserForm = { name: string; email: string };
+const registrationSchema = yup.object({
+  name: yup.string().required("Inserisci il nome"),
+  email: yup.string().required("Inserisci la mail"),
+  password: yup.string().required("Inserisci la password"),
+});
 
-interface RegistrationFormProps {
-  setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
-  setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
-}
+type UserForm = yup.InferType<typeof registrationSchema>;
 
-const RegistrationForm: React.FunctionComponent<RegistrationFormProps> = ({
-  setIsAuthenticated,
-  setUser,
-}) => {
-  const { createAccount } = useUsers();
-
+const RegistrationForm = () => {
+  const [register, _user, _loading, errorReg] = useRegister();
+  const navigate = useNavigate();
   const {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<UserForm>({
-    resolver: yupResolver(
-      yup.object({
-        name: yup.string().required("Inserisci il nome"),
-        email: yup.string().required("Inserisci la mail"),
-      })
-    ),
+  } = useForm({
+    resolver: yupResolver(registrationSchema),
   });
 
-  const onSubmit = (data: UserForm) => {
-    createAccount({
-      id: getRandomId(),
-      name: data.name,
-      email: data.email,
-    }).then((createdUser) => setUser(createdUser));
+  const onSubmit = ({ email, password }: UserForm) => {
+    register(email, password).then(() => {
+      navigate("/");
+    });
   };
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+      <Box marginBottom={3}>
+        {errorReg?.message ? (
+          <Alert severity="error">
+            <AlertTitle>Attenzione</AlertTitle>
+            {errorReg?.message}
+          </Alert>
+        ) : null}
+      </Box>
       <FormGroup sx={{ rowGap: 3 }}>
         <Controller
           name="name"
@@ -69,15 +74,26 @@ const RegistrationForm: React.FunctionComponent<RegistrationFormProps> = ({
             />
           )}
         />
-        <TextField color="primary" label="Password" type="password" />
+        <Controller
+          name="password"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              color="primary"
+              label="Password"
+              type="password"
+            />
+          )}
+        />
         <Button variant="contained" type="submit">
           Registrati
         </Button>
       </FormGroup>
       <Typography>Hai giá un account?</Typography>
-      <Button variant="text" onClick={() => setIsAuthenticated(true)}>
-        Accedi
-      </Button>
+      <Link to="/">
+        <Button variant="text">Accedi</Button>
+      </Link>
     </Box>
   );
 };
