@@ -1,11 +1,14 @@
+import { Timestamp } from "@firebase/firestore";
+
 export type Message = {
-  timestamp: string;
-  message: string;
-  incoming?: boolean;
-  chatId: string;
+  id: string;
+  userId: string;
+  text: string;
+  timestamp: Timestamp;
 };
 
 export type Chat = {
   id: string;
-  chatList: string[];
+  participants: string[];
+  messages: Message[];
 };

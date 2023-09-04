@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import Logout from "@mui/icons-material/Logout";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { User } from "@firebase/auth";
 
 interface ChatHeaderProps {
@@ -23,10 +23,7 @@ interface ChatHeaderProps {
 
 const settings = ["Logout"];
 
-const ChatHeader: React.FunctionComponent<ChatHeaderProps> = ({
-  user,
-  logout,
-}) => {
+const ChatHeader: FC<ChatHeaderProps> = ({ user, logout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleOpenUserMenu = () => {
     setIsMenuOpen(!isMenuOpen);

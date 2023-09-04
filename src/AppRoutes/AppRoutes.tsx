@@ -3,17 +3,18 @@ import { useAuthState } from "../firebase/hooks";
 import LoginForm from "../shared/components/LoginForm";
 import RegistrationForm from "../shared/components/RegistrationForm";
 import PrivateArea from "./PrivateArea";
+import ChatPage from "../shared/components/chat/ChatPage";
 
-interface AppRoutesProps {}
-
-const AppRoutes: React.FunctionComponent<AppRoutesProps> = () => {
+const AppRoutes = () => {
   const [user, _isLoading] = useAuthState();
 
   return (
     <>
       {user ? (
         <Routes>
-          <Route path="/" element={<PrivateArea />} />
+          <Route path="/" element={<PrivateArea />}>
+            <Route path="/:id" element={<ChatPage />} />
+          </Route>
         </Routes>
       ) : (
         <Routes>

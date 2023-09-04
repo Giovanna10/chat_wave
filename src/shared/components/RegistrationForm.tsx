@@ -11,6 +11,7 @@ import {
 import { Controller, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { createUser } from "../../firebase/database/user";
 import { useRegister } from "../../firebase/hooks";
 
 const registrationSchema = yup.object({
@@ -22,7 +23,7 @@ const registrationSchema = yup.object({
 type UserForm = yup.InferType<typeof registrationSchema>;
 
 const RegistrationForm = () => {
-  const [register, _user, _loading, errorReg] = useRegister();
+  const [register, _userCredential, _loading, errorReg] = useRegister();
   const navigate = useNavigate();
   const {
     handleSubmit,
@@ -32,8 +33,11 @@ const RegistrationForm = () => {
     resolver: yupResolver(registrationSchema),
   });
 
-  const onSubmit = ({ email, password }: UserForm) => {
-    register(email, password).then(() => {
+  const onSubmit = ({ email, password, name }: UserForm) => {
+    register(email, password).then((userCredential) => {
+      if (userCredential) {
+        createUser(userCredential.user.uid, name, email, "");
+      }
       navigate("/");
     });
   };

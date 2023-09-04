@@ -20,7 +20,6 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.45.4",
-    "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
@@ -31,7 +30,8 @@
     "startDB": "json-server --watch db.json --port 3030",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed": "node scripts/seed.js"
   },
   "eslintConfig": {
     "extends": [
