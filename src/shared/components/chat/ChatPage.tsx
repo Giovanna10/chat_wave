@@ -12,7 +12,9 @@ import { useChatMessages } from "../../../firebase/hooks/chat";
 import { useChatUsersByParticipants } from "../../../firebase/hooks/user";
 import { getUserUniqueIds } from "../../utils";
 import { ChatSend } from "./ChatSend";
+import { useMobile } from "../../hooks/useMobile";
 const ChatPage = () => {
+  const { isMobile } = useMobile();
   const params = useParams();
 
   if (!params.id) return null;
@@ -24,8 +26,8 @@ const ChatPage = () => {
         sx={{
           position: "fixed",
           bottom: 0,
-          left: 340,
-          width: "calc(100% - 340px)",
+          left: isMobile ? 0 : 340,
+          width: isMobile ? "100%" : "calc(100% - 340px)",
           zIndex: 1,
         }}
       >
@@ -40,6 +42,7 @@ type ChatProps = PropsWithChildren<{
 }>;
 
 const Chat = (props: ChatProps) => {
+  const { isMobile } = useMobile();
   const [messages = [], isLoading] = useChatMessages(props.id);
   const uniqueIds = getUserUniqueIds(messages) as string[] | undefined;
 
@@ -48,7 +51,7 @@ const Chat = (props: ChatProps) => {
   return (
     <Box
       sx={{
-        width: "calc(100% - 340px)",
+        width: isMobile ? "100%" : "calc(100% - 340px)",
         marginTop: 10,
         marginBottom: 2,
         marginLeft: "auto",

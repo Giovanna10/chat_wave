@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { FC, ReactElement, useState } from "react";
 import { useSignOut } from "../../../firebase/hooks";
+import { useNavigate } from "react-router";
 
 const drawerWidth = 340;
 
@@ -19,7 +20,11 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
   const [signOut] = useSignOut();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const handleSignOut = () => {
+    signOut().then(() => navigate("/"));
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -73,7 +78,7 @@ const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
           <Toolbar>
             <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
             <Typography>{user.email}</Typography>
-            <Button onClick={() => signOut()}>Logout</Button>
+            <Button onClick={handleSignOut}>Logout</Button>
           </Toolbar>
           <Divider />
           <Box sx={{ marginTop: 2, marginLeft: 4 }}>
@@ -95,7 +100,7 @@ const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
           <Toolbar>
             <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
             <Typography>{user.email}</Typography>
-            <Button onClick={() => signOut()}>Logout</Button>
+            <Button onClick={handleSignOut}>Logout</Button>
           </Toolbar>
           <Divider />
           <Box sx={{ marginTop: 2, marginLeft: 4 }}>
