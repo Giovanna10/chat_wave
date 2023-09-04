@@ -12,7 +12,7 @@ const AppRoutes = () => {
     <>
       {user ? (
         <Routes>
-          <Route path="/" element={<PrivateArea />}>
+          <Route path="/" element={<PrivateArea user={user} />}>
             <Route path="/:id" element={<ChatPage />} />
           </Route>
         </Routes>

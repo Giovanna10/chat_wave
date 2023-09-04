@@ -1,19 +1,24 @@
+import { User } from "@firebase/auth";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Avatar, Button, Divider, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { FC, ReactElement, useState } from "react";
+import { useSignOut } from "../../../firebase/hooks";
 
 const drawerWidth = 340;
 
 interface LayoutProps {
+  user: User;
   chatList: ReactElement;
   window?: () => Window;
 }
 
-const Layout: FC<LayoutProps> = ({ chatList, window }) => {
+const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
+  const [signOut] = useSignOut();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -65,6 +70,15 @@ const Layout: FC<LayoutProps> = ({ chatList, window }) => {
             },
           }}
         >
+          <Toolbar>
+            <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
+            <Typography>{user.email}</Typography>
+            <Button onClick={() => signOut()}>Logout</Button>
+          </Toolbar>
+          <Divider />
+          <Box sx={{ marginTop: 2, marginLeft: 4 }}>
+            <Typography variant="h6">CHATS</Typography>
+          </Box>
           {chatList}
         </Drawer>
         <Drawer
@@ -78,18 +92,17 @@ const Layout: FC<LayoutProps> = ({ chatList, window }) => {
           }}
           open
         >
+          <Toolbar>
+            <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
+            <Typography>{user.email}</Typography>
+            <Button onClick={() => signOut()}>Logout</Button>
+          </Toolbar>
+          <Divider />
+          <Box sx={{ marginTop: 2, marginLeft: 4 }}>
+            <Typography variant="h6">CHATS</Typography>
+          </Box>
           {chatList}
         </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}
-      >
-        <Toolbar />
       </Box>
     </Box>
   );

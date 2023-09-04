@@ -89,7 +89,6 @@ const useChatUser = (userId: string) => {
   const context = useContext(ChatContext);
 
   if (!context) throw new Error("useChatUser must be used within ChatProvider");
-  console.log(context);
   return context.users?.find((user) => user.id === userId);
 };
 

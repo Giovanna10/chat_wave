@@ -1,14 +1,20 @@
+import { User } from "@firebase/auth";
 import { Box } from "@mui/material";
+import { FC } from "react";
 import {} from "react-firebase-hooks/database";
 import { Outlet } from "react-router";
 import { ChatList } from "../../shared/components/chat/ChatList";
 import Layout from "../../shared/components/layout";
 
-const PrivateArea = () => {
+interface PrivateAreaProps {
+  user: User;
+}
+
+const PrivateArea: FC<PrivateAreaProps> = ({ user }) => {
   return (
     <Box sx={{ width: "100%" }}>
       <Outlet />
-      <Layout chatList={<ChatList />} />
+      <Layout user={user} chatList={<ChatList />} />
     </Box>
   );
 };
