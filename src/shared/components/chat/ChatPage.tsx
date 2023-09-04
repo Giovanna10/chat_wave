@@ -1,27 +1,16 @@
 import {
-  AppBar,
   Avatar,
   Box,
   ListItem,
   ListItemAvatar,
   ListItemText,
-  Toolbar,
-  Typography,
 } from "@mui/material";
+import { PropsWithChildren, createContext, useContext, useMemo } from "react";
 import { useParams } from "react-router";
 import { useAuthState } from "../../../firebase/hooks";
-import { getChatMessages, useChatMessages } from "../../../firebase/hooks/chat";
-import { getUserUniqueIds } from "../../utils";
-import {
-  PropsWithChildren,
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useChatMessages } from "../../../firebase/hooks/chat";
 import { useChatUsersByParticipants } from "../../../firebase/hooks/user";
+import { getUserUniqueIds } from "../../utils";
 import { ChatSend } from "./ChatSend";
 const ChatPage = () => {
   const params = useParams();
@@ -61,12 +50,10 @@ const Chat = (props: ChatProps) => {
       sx={{
         width: "calc(100% - 340px)",
         marginTop: 10,
-        marginBottom: 14,
+        marginBottom: 2,
         marginLeft: "auto",
-        height: "calc(100vh - 50px)",
       }}
     >
-      {/* <button onClick={onClick}>load more</button> */}
       <ChatProvider userIds={uniqueIds}>
         {messages.map((message) => (
           <ChatConversation
