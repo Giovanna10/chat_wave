@@ -98,13 +98,13 @@ const useChatUser = (userId: string) => {
 const ChatConversation = (props: { userId: string; message: string }) => {
   const [currentUser] = useAuthState();
   const user = useChatUser(props.userId);
+  const isCurrentUser = props.userId === currentUser?.uid;
 
   return (
     <Box
       sx={{
         display: "flex",
-        justifyContent:
-          props.userId === currentUser?.uid ? "flex-end" : "flex-start",
+        justifyContent: isCurrentUser ? "flex-end" : "flex-start",
       }}
     >
       <ListItem
@@ -112,10 +112,17 @@ const ChatConversation = (props: { userId: string; message: string }) => {
           width: "fit-content",
         }}
       >
-        <ListItemAvatar>
+        <ListItemAvatar
+          sx={{
+            order: isCurrentUser ? 2 : 1,
+            marginLeft: isCurrentUser ? 2 : 0,
+          }}
+        >
           <Avatar alt={user?.email} src="/static/images/avatar/2.jpg" />
         </ListItemAvatar>
-        <ListItemText>{props.message}</ListItemText>
+        <ListItemText sx={{ order: isCurrentUser ? 1 : 2 }}>
+          {props.message}
+        </ListItemText>
       </ListItem>
     </Box>
   );
