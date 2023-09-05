@@ -20,9 +20,9 @@ You will also see any lint errors in the console.
 
 ## Table of Contents
 
-[Libraries Used](#libraries-used)
-[Folder Structure](#folder-structure)
-[Design Patterns](#design-patterns)
+- [Libraries Used](#libraries-used)
+- [Folder Structure](#folder-structure)
+- [Design Patterns](#design-patterns)
 
 ### Libraries Used {#libraries-used}
 
@@ -43,9 +43,7 @@ Yup: used for managing form validation schemas, ensuring data integrity and accu
 The project's folder structure is organized by file type and functionality to maintain a clean and maintainable codebase. Here's an overview of the main folders:
 
 components
-
 hooks
-
 utils
 
 ### Design Patterns {#design-patterns}
