@@ -1,8 +1,8 @@
 import { ListItem, ListItemButton, ListItemText } from "@mui/material";
-import { useNavigate } from "react-router";
-import { useChat, useLastMessage } from "../../../firebase/hooks/chat";
 import { PropsWithChildren } from "react";
+import { useNavigate } from "react-router";
 import { createEmptyChats } from "../../../firebase/database/chat";
+import { useChat, useLastMessage } from "../../../firebase/hooks/chat";
 
 type ChatPreviewMessageTextProps = {
   chatId: string;
@@ -23,16 +23,16 @@ type ChatPreviewProps = {
 
 export const ChatPreview = (props: PropsWithChildren<ChatPreviewProps>) => {
   const navigate = useNavigate();
-  const chat = useChat([props.currentUserId, props.chatUserId]);
+  const chats = useChat([props.currentUserId, props.chatUserId]);
 
-  if (chat && chat[0]) {
+  if (chats && chats[0]) {
     return (
-      <ListItemButton onClick={() => navigate(`/${chat[0].id}`)}>
+      <ListItemButton onClick={() => navigate(`/${chats[0].id}`)}>
         <ListItem alignItems="flex-start">
           {props.children}
           <ChatPreviewMessageText
             chatUserName={props.chatUserName}
-            chatId={chat[0].id}
+            chatId={chats[0].id}
           />
         </ListItem>
       </ListItemButton>

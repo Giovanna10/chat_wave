@@ -18,14 +18,14 @@ export const ChatList = () => {
   return (
     <List>
       {chatUsersExceptMe?.map((user) => (
-        <ListItem disablePadding>
+        <ListItem>
           <ChatPreview
             chatUserId={user.id}
             chatUserName={user.name}
             currentUserId={currentUser.uid}
           >
             <ListItemAvatar>
-              <Avatar alt={user.name} src="/static/images/avatar/2.jpg" />
+              <Avatar alt={user.name} src={user.avatar} />
             </ListItemAvatar>
           </ChatPreview>
         </ListItem>

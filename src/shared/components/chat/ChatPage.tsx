@@ -118,7 +118,7 @@ const ChatConversation = (props: { userId: string; message: string }) => {
             marginLeft: isCurrentUser ? 2 : 0,
           }}
         >
-          <Avatar alt={user?.email} src="/static/images/avatar/2.jpg" />
+          <Avatar alt={user?.name} src={user?.avatar} />
         </ListItemAvatar>
         <ListItemText sx={{ order: isCurrentUser ? 1 : 2 }}>
           {props.message}

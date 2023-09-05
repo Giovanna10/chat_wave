@@ -22,6 +22,7 @@ const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
   const [signOut] = useSignOut();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+
   const handleSignOut = () => {
     signOut().then(() => navigate("/"));
   };
@@ -75,9 +76,14 @@ const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
             },
           }}
         >
-          <Toolbar>
-            <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
-            <Typography>{user.email}</Typography>
+          <Toolbar sx={{ display: "flex", gap: 2 }}>
+            <Avatar
+              alt={user.displayName ? user.displayName : user.email ?? ""}
+              src={user.photoURL ?? "/static/images/avatar/2.jpg"}
+            />
+            <Typography>
+              {user.displayName ? user.displayName : user.email ?? ""}
+            </Typography>
             <Button onClick={handleSignOut}>Logout</Button>
           </Toolbar>
           <Divider />
@@ -98,8 +104,13 @@ const Layout: FC<LayoutProps> = ({ user, chatList, window }) => {
           open
         >
           <Toolbar>
-            <Avatar alt={user.email ?? ""} src="/static/images/avatar/2.jpg" />
-            <Typography>{user.email}</Typography>
+            <Avatar
+              alt={user.displayName ? user.displayName : user.email ?? ""}
+              src={user.photoURL ?? "/static/images/avatar/2.jpg"}
+            />
+            <Typography>
+              {user.displayName ? user.displayName : user.email ?? ""}
+            </Typography>
             <Button onClick={handleSignOut}>Logout</Button>
           </Toolbar>
           <Divider />

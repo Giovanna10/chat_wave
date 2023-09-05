@@ -38,7 +38,7 @@ const userConverter: FirestoreDataConverter<ChatUser> = {
       avatar: data.author,
       id: snapshot.id,
       email: data.email,
-      name: data.email,
+      name: data.name,
     };
   },
 };

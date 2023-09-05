@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { createUser } from "../../firebase/database/user";
 import { useRegister } from "../../firebase/hooks";
+import { updateProfile } from "@firebase/auth";
 
 const registrationSchema = yup.object({
   name: yup.string().required("Inserisci il nome"),
@@ -36,7 +37,20 @@ const RegistrationForm = () => {
   const onSubmit = ({ email, password, name }: UserForm) => {
     register(email, password).then((userCredential) => {
       if (userCredential) {
-        createUser(userCredential.user.uid, name, email, "");
+        console.log(userCredential);
+
+        updateProfile(userCredential.user, {
+          displayName: name,
+          photoURL: "/static/images/avatar/2.jpg",
+        })
+          .then(() => {
+            createUser(userCredential.user.uid, name, email, "");
+          })
+          .catch((error) => {
+            console.log({ error });
+
+            throw new Error("Error in profile updating");
+          });
       }
       navigate("/");
     });
