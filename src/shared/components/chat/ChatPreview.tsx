@@ -23,16 +23,20 @@ type ChatPreviewProps = {
 
 export const ChatPreview = (props: PropsWithChildren<ChatPreviewProps>) => {
   const navigate = useNavigate();
-  const chats = useChat([props.currentUserId, props.chatUserId]);
+  const sortedParticipants = [props.currentUserId, props.chatUserId].sort() as [
+    string,
+    string
+  ];
+  const chatCollection = useChat(sortedParticipants);
 
-  if (chats && chats[0]) {
+  if (chatCollection && chatCollection[0]) {
     return (
-      <ListItemButton onClick={() => navigate(`/${chats[0].id}`)}>
+      <ListItemButton onClick={() => navigate(`/${chatCollection[0].id}`)}>
         <ListItem alignItems="flex-start">
           {props.children}
           <ChatPreviewMessageText
             chatUserName={props.chatUserName}
-            chatId={chats[0].id}
+            chatId={chatCollection[0].id}
           />
         </ListItem>
       </ListItemButton>
@@ -41,11 +45,9 @@ export const ChatPreview = (props: PropsWithChildren<ChatPreviewProps>) => {
   return (
     <ListItemButton
       onClick={() => {
-        createEmptyChats([props.currentUserId, props.chatUserId]).then(
-          (chat) => {
-            navigate(`/${chat.id}`);
-          }
-        );
+        createEmptyChats(sortedParticipants).then((chat) => {
+          navigate(`/${chat.id}`);
+        });
       }}
     >
       <ListItem alignItems="flex-start">
