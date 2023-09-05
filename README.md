@@ -24,9 +24,7 @@ You will also see any lint errors in the console.
 [Folder Structure](#folder-structure)
 [Design Patterns](#design-patterns)
 
-#libraries-used
-
-## Libraries Used
+### Libraries Used {#libraries-used}
 
 The Chat Application utilizes several libraries to enhance its functionality and user experience:
 
@@ -40,9 +38,7 @@ React Hook Form: employed for efficient form management.
 
 Yup: used for managing form validation schemas, ensuring data integrity and accuracy.
 
-#folder-structure
-
-## Folder Structure
+### Folder Structure {#folder-structure}
 
 The project's folder structure is organized by file type and functionality to maintain a clean and maintainable codebase. Here's an overview of the main folders:
 
@@ -52,9 +48,7 @@ hooks
 
 utils
 
-#design-patterns
-
-## Design Patterns
+### Design Patterns {#design-patterns}
 
 1. Compound Pattern (Chat Page)
    The application employs the compound pattern on the Chat page. It uses the Context API to retrieve chat user data.
